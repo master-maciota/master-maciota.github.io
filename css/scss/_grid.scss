@@ -1,0 +1,128 @@
+//  Variaveis do Grid
+$columns: 12;
+$gutter: 20px;
+$large-device: 1480px;
+$medium-device: 880px;
+$small-device: 360px;
+
+//  Box-Sizing
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+// Mixin de media-querie
+@mixin device($device-size) {
+	@if $device-size == large {
+		@media screen and (min-width: $large-device) {
+			@content;
+		}
+	}
+	@else if $device-size == medium {
+		@media screen and (min-width: $medium-device) and (max-width: $large-device - 1) {
+			@content;
+		}
+	}
+	@else if $device-size == small {
+		@media screen and (max-width: $medium-device - 1) {
+			@content;
+		}
+	}
+}
+
+// Função do Grid
+@function grid($col, $offset: false) {
+	$width: $col / $columns * 100 + "%";
+	$result: calc(#{$width} - #{$gutter});
+	@if $offset == offset {
+		$gutter: $gutter / 2;
+		$result: calc(#{$width} + #{$gutter});
+	}
+	@return $result;
+}
+
+// Loop das classes de Grid (-20px)
+@for $i from 1 through $columns {
+	.grid-#{$i} {
+		width: grid($i);
+	}
+}
+
+// Mixin da estrutura do grid
+@mixin grid-structure {
+	float: left;
+	min-height: 1px;
+	margin-left: $gutter / 2;
+	margin-right: $gutter / 2;
+	@include device(small) {
+		width: 100%;
+		float: none;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+// Seleciona todos os itens que tiver o atributo class e que começem com "grid-"
+[class^="grid-"] {
+	@include grid-structure;
+}
+
+// Gera as classes de offset (+10px, margin-left)
+@for $i from 1 through $columns {
+	.offset-#{$i} {
+		margin-left: grid($i, offset);
+	}
+}
+
+// Caso o device seja small o offset já não vai existir
+@include device(small) {
+	%offset {
+		margin-left: 0px;
+	}
+}
+
+// Mixin de clear-fix
+@mixin clearfix {
+	&::after, &::before {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin container {
+	max-width: $large-device;
+	margin: 0px auto;
+	position: relative;
+	@include device(medium) {
+		max-width: $medium-device;
+	}
+	@include device(small) {
+		max-width: $small-device;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	@include clearfix;
+}
+
+// Todo item que tiver a classe container vai incluir o mixin container, que possui não 
+// só ele mesmo mas também o clearfix dentro dele
+.container {
+	@include container;
+}
+
+// Linha de margin negativo para que grid dentro de grid possa caber sem um
+// espaçamento interno padrão, apenas no mobile que não é necessário
+@mixin row {
+	position: relative;
+	margin-left: -$gutter / 2;
+	margin-right: -$gutter / 2;
+	@include device(small) {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	@include clearfix;
+}
+
+.row {
+	@include row;
+}

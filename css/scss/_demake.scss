@@ -1,0 +1,47 @@
+.comunidade {
+	background-image: url(../img-site/comunidade-fundo.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 820px;
+	width: 100%;
+	padding: 50px 0px;
+
+	@include device(medium) {
+		height: 580px;
+	}
+
+	@include device(small) {
+		height: 940px;
+	}
+	
+	img {
+		margin-top: 20px;
+		width: 100%;
+		transform: scaleX(-1);
+
+		@include device(medium) {
+			margin-top: 62px;
+		}
+
+		@include device(small) {
+			margin-top: 0px;
+			margin-left: 50px;
+			width: 60%;
+		}
+	}
+
+	.button-area-demake {
+		margin-top: 40px;
+		margin-left: 300px;
+
+		@include device(medium) {
+			margin-left: 115px;
+		}
+
+		@include device(small) {
+			margin-top: 30px;
+			margin-left: 0px;
+		}
+	}
+}

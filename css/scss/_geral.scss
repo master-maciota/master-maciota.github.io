@@ -1,0 +1,166 @@
+.quote {
+	color: $branco;
+
+	p {
+		text-align: center;
+
+		@include tipo-1(24)
+	}
+
+	cite {
+		display: block;
+		text-align: right;
+		
+		@include tipo-1(24)
+	}
+
+	@include device(small) {
+
+		p {
+			@include tipo-1(18);
+		}
+
+		cite {
+			margin-top: 10px;
+
+			@include tipo-1(18);
+		}
+	}
+}
+
+.button {
+	background: none;
+	border: 4px solid $branco;
+	padding: 16px 30px;
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: color 0.6s, border-color 0.6s;
+
+	&:hover {
+		color: $vermelho-sangue;
+		border-color: $vermelho-sangue;
+	}
+
+	@include tipo-2(36);
+
+	@include device(small) {
+		padding: 10px 15px;
+		display: block;
+		text-align: center;
+
+
+		@include tipo-2(18);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $branco;
+}
+
+.subtitulo {
+	color: $bege-claro;
+	text-transform: uppercase;
+
+	@include tipo-1(48);
+
+	&::after {
+		content: '';
+		display: block;
+		width: 20%;
+		height: 4px;
+		background: $bege-claro;
+		margin: 0px;
+		margin-top: -10px;
+	}
+
+	@include device(medium) {
+		font-size: 36px;
+	}
+
+	@include device(small) {
+
+		&::after {
+			height: 2px;
+			margin-top: 0px;
+		}
+
+		@include tipo-1(24);
+	}
+}
+
+.corpo-de-texto {
+	color: $branco;
+	max-width: 100%;
+	margin: 24px 0;
+	letter-spacing: 0.1em;
+	
+	@include tipo-2(18);
+
+	@include device(medium) {
+		@include tipo-2(14);
+	}
+
+	@include device(small) {
+		@include tipo-2(14);
+	}
+}
+
+.corpo-de-texto-final {
+	color: $branco;
+	max-width: 85%;
+	margin: 24px 0;
+	letter-spacing: 0.1em;
+	
+	@include tipo-2(18);
+
+	@include device(medium) {
+		@include tipo-2(14);
+	}
+
+	@include device(small) {
+		@include tipo-2(14);
+	}
+}
+
+.separador {
+	height: 120px;
+	background-color: $vermelho-sangue;
+
+	@include device(medium) {
+		height: 80px;
+	}
+
+	@include device(small) {
+		height: 40px;
+	}
+}
+
+iframe {
+	border: 4px solid $vermelho-sangue;
+	width: 75%;
+	height: 400px;
+	display: block;
+	margin: 0 auto;
+
+	@include device(medium) {
+		width: 60%;
+		height: 200px;
+	}
+
+	@include device(small) {
+		width: 80%;
+		height: 200px;
+	}
+}
+
+.anime {
+	opacity: 0;
+	transform: translate3d(-100px, 0, 0);
+	transition: .4s;
+}
+
+.anime-start {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}

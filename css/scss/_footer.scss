@@ -1,0 +1,13 @@
+.footer {
+	background-color: $vermelho-sangue;
+	height: 86px;
+	text-align: center;
+
+	@include device(medium) {
+		height: 72px;
+	}
+
+	@include device(small) {
+		height: 120px;
+	}
+}

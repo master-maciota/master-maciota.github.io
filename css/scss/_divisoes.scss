@@ -1,0 +1,184 @@
+.divisao-1 {
+	background-image: url(../img-site/background-jogo.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 680px;
+	width: 100%;
+	margin-top: -3px;
+	padding: 50px 0px;
+	
+	img {
+		width: 65%;
+	}
+
+	@include device(medium) {
+		padding: 106px 0px;
+
+		img {
+			width: 90%;
+		}
+	}
+
+	@include device(small) {
+		height: 1160px;
+		padding: 20px 0px;
+
+		img {
+			width: 60%;
+			margin-left: 60px;
+		}
+	}
+}
+
+.divisao-2 {
+	background-image: url(../img-site/background-descricao-2.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 720px;
+	width: 100%;
+	padding: 50px 0px;
+
+	img {
+		width: 75%;
+
+		@include device(small) {
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+
+		@include device(medium) {
+			width: 90%;
+		}
+	}
+
+	.corpo-de-texto-final {
+		text-align: right;
+		margin-left: 80px;
+
+		@include device(medium) {
+			text-align: left;
+			margin-left: 40px;
+		}
+
+		@include device(small) {
+			text-align: left;
+			margin-left: 0px;
+		}
+	}
+
+	.button-area-descricao-2 {
+		margin-left: 460px;
+		margin-top: 140px;
+
+		.button {
+			word-spacing: 10px;
+		}
+
+		@include device(medium) {
+			margin-left: 100px;
+			margin-top: 60px;
+		}
+
+		@include device(small) {
+			margin: 0 auto;
+		}
+	}
+
+	@include device(medium) {
+		height: 560px;
+	}
+
+	@include device(small) {
+		height: 1080px;
+	}
+}
+
+.divisao-3 {
+	background-image: url(../img-site/background-descricao-3.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 630px;
+	width: 100%;
+	padding: 50px 0px;
+
+	img {
+		width: 90%;
+	};
+
+	@include device(medium) {
+		height: 540px;
+	}
+
+	@include device(small) {
+		height: 990px;
+	}
+
+	.button-area-descricao-3 {
+		margin-left: 360px;
+		margin-top: 60px;
+
+		@include device(medium) {
+			margin-left: 85px;
+			margin-top: 45px;
+		}
+
+		@include device(small) {
+			margin: 0 auto;
+		}
+	}
+}
+
+.divisao-4 {
+	background-image: url(../img-site/background-descricao-4.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+	width: 100%;
+	padding: 50px 0px;
+
+	img {
+		width: 92%;
+
+		@include device(small) {
+			margin-top: 30px;
+		}
+	}
+
+	@include device(small) {
+		height: 1120px;
+	}
+
+	.button-area-descricao-4 {
+		margin-left: 360px;
+		margin-top: 60px;
+	
+		@include device(medium) {
+			margin-left: 120px;
+			margin-top: 45px;
+		}
+	
+		@include device(small) {
+			margin: 0 auto;
+		}
+	}
+
+
+	.corpo-de-texto-final {
+		text-align: right;
+		margin-left: 90px;
+
+		@include device(medium) {
+			text-align: left;
+			margin-left: 60px;
+		}
+
+		@include device(small) {
+			text-align: left;
+			margin-left: 0px;
+		}
+	}
+}

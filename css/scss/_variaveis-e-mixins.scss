@@ -1,0 +1,66 @@
+// CORES
+$preto: #1A0B06;
+$cinza-escuro: #34302F;
+$vermelho-sangue: #9A1818;
+$vermelho-claro: #7F3335;
+$bege-escuro: #99585C;
+$bege-claro: #C5A8AA;
+$branco: #ffffff;
+
+// FONTES
+$fonte-primaria: 'Fleshandblood', monospace;
+$fonte-secundaria: Perpetua, serif;
+
+// Função para as fontes serem definidas em EM e não em PIXEL
+// O $contexto serve para sempre a fonte puxar como pai a fonte padrão do browser (16px), não mudando de contexto sem necessidade
+@function em($pixel, $contexto: 16) {
+	@return $pixel / $contexto + em;
+}
+
+// MIXINS TIPOGRAFIA
+@mixin tipo-1($size) {
+	font-family: $fonte-primaria;
+	@if $size == 18 {
+		font-size: em(18);
+		line-height: em(24, 18);
+	}
+	@else if $size == 24 {
+		font-size: em(24);
+		line-height: em(36, 24);
+	}
+	@else if $size == 36 {
+		font-size: em(36);
+		line-height: em(48, 36);
+	}
+	@else if $size == 48 {
+		font-size: em(48);
+		line-height: em(72, 48);
+	}
+}
+
+@mixin tipo-2($size) {
+	font-family: $fonte-secundaria;
+	@if $size == 14 {
+		font-size: em(18);
+		line-height: em(24, 18);
+	}
+	@else if $size == 18 {
+		font-size: em(24);
+		line-height: em(36, 24);
+	}
+	@else if $size == 24 {
+		font-size: em(24);
+		line-height: em(48, 24);
+	}
+	@else if $size == 36 {
+		font-size: em(36);
+		line-height: em(48, 36);
+	}
+}
+
+
+@mixin box-shadow($shadow...) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
