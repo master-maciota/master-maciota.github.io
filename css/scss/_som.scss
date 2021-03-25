@@ -5,12 +5,14 @@
 	margin-top: 20px;
 	right: 12px;
 	bottom: 12px;
+	z-index: 999;
 
 	img {
 		width: 60px;
 		height: 60px;
 		padding: 6px;
 		background-image: url(../img-site/mute.png);
+		z-index: 999;
 
 		@include device(small) {
 			width: 42px;
