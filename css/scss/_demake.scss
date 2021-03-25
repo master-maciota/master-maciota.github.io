@@ -3,7 +3,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 820px;
+	height: 860px;
 	width: 100%;
 	padding: 50px 0px;
 
@@ -36,7 +36,7 @@
 		margin-left: 300px;
 
 		@include device(medium) {
-			margin-left: 115px;
+			margin-left: 100px;
 		}
 
 		@include device(small) {
